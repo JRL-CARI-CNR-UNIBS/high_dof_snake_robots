@@ -1,0 +1,9 @@
+group_names_map:
+  dirrt: manipulator
+
+
+
+dirrt:
+  max_refine_time: 10000
+  path_optimization: false
+  tube_sampler: true

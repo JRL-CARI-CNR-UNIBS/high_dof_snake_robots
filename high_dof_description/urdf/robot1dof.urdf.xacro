@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--URDF MODEL 13 DoFs-->
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="robot1dof" >
+
+<xacro:property name="arm_length" value="2" />
+<xacro:property name="vertebrae" value="1" />
+
+<xacro:include filename="$(find high_dof_description)/urdf/single_joint.xacro" />
+<xacro:include filename="$(find high_dof_description)/urdf/mobile_base.xacro" />
+
+<link name="world">
+<inertial>
+  <mass value="0.01" />
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <inertia ixx="0.01" iyy="0.01" izz="0.01"
+  ixy="0" ixz="0" iyz="0" />
+</inertial>
+</link>
+
+<xacro:mobile_base mobile="false" parent="world" child="a_mount_flange"/>
+<xacro:single_joint prefix="a_" joint_limited="true" upper_arm_length="${0.5*arm_length/vertebrae}"  forearm_length="${0.5*arm_length/vertebrae}"/>
+
+<joint name="last_flange_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <parent link="a_flange" />
+  <child link="flange" />
+</joint>
+<link name="flange"/>
+
+<xacro:include filename="$(find high_dof_description)/urdf/roscontrol.gazebo" />
+
+</robot>

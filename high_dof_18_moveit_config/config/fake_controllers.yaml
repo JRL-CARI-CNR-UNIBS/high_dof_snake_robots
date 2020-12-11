@@ -1,0 +1,21 @@
+controller_list:
+  - name: fake_manipullator_controller
+    joints:
+      - a_joint_1
+      - a_joint_2
+      - a_joint_3
+      - b_joint_1
+      - b_joint_2
+      - b_joint_3
+      - c_joint_1
+      - c_joint_2
+      - c_joint_3
+      - d_joint_1
+      - d_joint_2
+      - d_joint_3
+      - e_joint_1
+      - e_joint_2
+      - e_joint_3
+      - f_joint_1
+      - f_joint_2
+      - f_joint_3

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: high_dof_description
+    relative_path: urdf/robot15dof.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/robot3dof.srdf
+  CONFIG:
+    author_name: Manuel Beschi
+    author_email: manuel.beschi@unibs.it
+    generated_timestamp: 1594210720

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="dof" default="6"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find high_dof_description)/urdf/robot$(arg dof)dof.urdf.xacro'" />
+  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen">
+    <param name="use_gui" value="true" />
+   </node>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="ignore_timestamp" value="true" />
+  </node>
+  <node pkg="rviz" type="rviz" name="rviz" output="screen"/>
+</launch>
