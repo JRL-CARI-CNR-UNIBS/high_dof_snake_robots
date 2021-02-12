@@ -77,7 +77,7 @@
   <collision>
     <origin xyz="0 ${-upper_arm_length/2} 0" rpy="1.5708 0 0" />
     <geometry>
-      <cylinder length="${-upper_arm_length}"
+      <cylinder length="${upper_arm_length}"
       radius="${upper_arm_radius}" />
     </geometry>
   </collision>
