@@ -5,6 +5,7 @@
 
   <arg name="pipeline" default="ompl" />
 
-  <include file="$(find high_dof_6_moveit_config)/launch/$(arg pipeline)_planning_pipeline.launch.xml" />
+  <include ns="planning_pipelines/ompl" file="$(find high_dof_6_moveit_config)/launch/ompl_planning_pipeline.launch.xml" />
+  <include ns="planning_pipelines/dirrt" file="$(find high_dof_6_moveit_config)/launch/dirrt_planning_pipeline.launch.xml" />
 
 </launch>

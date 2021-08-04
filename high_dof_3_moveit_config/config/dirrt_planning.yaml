@@ -1,9 +1,34 @@
 group_names_map:
-  dirrt: manipulator
+  mixed_strategy: manipulator
+  mixed_strategy_extend: manipulator
+  informed_rrt: manipulator
+
+default_planner_config: mixed_strategy
 
 
+mixed_strategy:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: false
+  local_bias: 0.25
+  forgetting_factor: 0.999
+  tube_radius: 0.01
 
-dirrt:
-  max_refine_time: 10000
-  path_optimization: false
-  tube_sampler: false
+mixed_strategy_extend:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.25
+  forgetting_factor: 0.999
+  tube_radius: 0.01
+
+informed_rrt:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.0
+  forgetting_factor: 0
+  tube_radius: 0.01

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="name_space" default="/"/>
+
+  <group ns="$(arg name_space)">
+    <rosparam command="load" file="$(find high_dof_test_scenes)/config/static_scene.yaml"/>
+    <node pkg="object_loader" name="scene_spawner" type="scene_spawner" output="screen"/>
+    <node pkg="object_loader" name="context_manager_node" type="context_manager_node" respawn="true" output="screen"/>
+  </group>
+
+</launch>
