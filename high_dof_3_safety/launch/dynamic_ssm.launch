@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+<node pkg="velocity_scaling_iso15066" type="velocity_scaling_iso15066_node" name="safety" output="screen">
+  <rosparam file="$(find panda_safety)/config/dynamic_ssm_safety.yaml" command="load"/>
+</node>
+
+</launch>
