@@ -1,34 +1,106 @@
 group_names_map:
   mixed_strategy: manipulator
+  mixed_strategy_extend: manipulator
+  mixed_strategy_9901: manipulator
+  mixed_strategy_extend_9901: manipulator
+  mixed_strategy_9902: manipulator
+  mixed_strategy_extend_9902: manipulator
+  mixed_strategy_99902: manipulator
+  mixed_strategy_extend_99902: manipulator
+  informed_rrt: manipulator
 
+default_planner_config: mixed_strategy
 
 
 mixed_strategy:
   type: Multigoal
-  max_distance: 0.2
+  max_distance: 0.5
   max_refine_time: 1500.0
   extend: false
   local_bias: 0.25
+  forgetting_factor: 0.999
+  tube_radius: 0.01
+  utopia_tolerance: 0.0000001
+
+mixed_strategy_extend:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.25
+  forgetting_factor: 0.999
+  tube_radius: 0.01
+  utopia_tolerance: 0.0000001
+
+
+mixed_strategy_9901:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: false
+  local_bias: 0.25
+  forgetting_factor: 0.99
+  tube_radius: 0.01
+  utopia_tolerance: 0.0000001
+
+mixed_strategy_extend_9901:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.25
+  forgetting_factor: 0.99
+  tube_radius: 0.01
+  utopia_tolerance: 0.0000001
+
+
+mixed_strategy_99902:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: false
+  local_bias: 0.25
+  forgetting_factor: 0.999
   tube_radius: 0.02
-  base_frame: world
-  tool_frame: tip
-  min_distance: 0.4
-  max_distance: 1.0
-  max_penalty: 10.0
-  display_bubbles: true
-  links:
-  - tip
-  - ur5_tool0
-  - ur5_wrist_1_link
-  - ur5_wrist_2_link
-  - ur5_wrist_3_link
-  - ur5_forearm_link
-  - ur5_upper_arm_link
+  utopia_tolerance: 0.0000001
 
-  use_avoidance_goal: false # set true if the human avoidance is done only at the goal. Useful in Multigoal planning. ***CHANGE IT***
-  use_avoidance_path: false # set true if the human avoidance is done during the path. It is slower than use_avoidance_goal. ***CHANGE IT***
-  #If use_avoidance_goal and use_avoidance_path are both true, use_avoidance_path is used.
-  computation_step: 0.01
-  detector_topic: /poses #topic name of the message type geometry_msgs/PoseArray. ***CHANGE IT IF NEEDED***
+mixed_strategy_extend_99902:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.25
+  forgetting_factor: 0.999
+  tube_radius: 0.02
+  utopia_tolerance: 0.0000001
+
+mixed_strategy_9902:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: false
+  local_bias: 0.25
+  forgetting_factor: 0.99
+  tube_radius: 0.02
+  utopia_tolerance: 0.0000001
+
+mixed_strategy_extend_9902:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.25
+  forgetting_factor: 0.99
+  tube_radius: 0.02
+  utopia_tolerance: 0.0000001
 
 
+informed_rrt:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.0
+  forgetting_factor: 0
+  tube_radius: 0.01
+  utopia_tolerance: 0.0000001

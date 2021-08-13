@@ -20,6 +20,7 @@ mixed_strategy:
   local_bias: 0.25
   forgetting_factor: 0.999
   tube_radius: 0.01
+  utopia_tolerance: 0.0000001
 
 mixed_strategy_extend:
   type: Multigoal
@@ -29,6 +30,7 @@ mixed_strategy_extend:
   local_bias: 0.25
   forgetting_factor: 0.999
   tube_radius: 0.01
+  utopia_tolerance: 0.0000001
 
 
 mixed_strategy_9901:
@@ -39,6 +41,7 @@ mixed_strategy_9901:
   local_bias: 0.25
   forgetting_factor: 0.99
   tube_radius: 0.01
+  utopia_tolerance: 0.0000001
 
 mixed_strategy_extend_9901:
   type: Multigoal
@@ -48,6 +51,7 @@ mixed_strategy_extend_9901:
   local_bias: 0.25
   forgetting_factor: 0.99
   tube_radius: 0.01
+  utopia_tolerance: 0.0000001
 
 
 mixed_strategy_99902:
@@ -58,6 +62,7 @@ mixed_strategy_99902:
   local_bias: 0.25
   forgetting_factor: 0.999
   tube_radius: 0.02
+  utopia_tolerance: 0.0000001
 
 mixed_strategy_extend_99902:
   type: Multigoal
@@ -67,6 +72,7 @@ mixed_strategy_extend_99902:
   local_bias: 0.25
   forgetting_factor: 0.999
   tube_radius: 0.02
+  utopia_tolerance: 0.0000001
 
 mixed_strategy_9902:
   type: Multigoal
@@ -76,6 +82,7 @@ mixed_strategy_9902:
   local_bias: 0.25
   forgetting_factor: 0.99
   tube_radius: 0.02
+  utopia_tolerance: 0.0000001
 
 mixed_strategy_extend_9902:
   type: Multigoal
@@ -85,6 +92,7 @@ mixed_strategy_extend_9902:
   local_bias: 0.25
   forgetting_factor: 0.99
   tube_radius: 0.02
+  utopia_tolerance: 0.0000001
 
 
 informed_rrt:
@@ -95,3 +103,4 @@ informed_rrt:
   local_bias: 0.0
   forgetting_factor: 0
   tube_radius: 0.01
+  utopia_tolerance: 0.0000001
