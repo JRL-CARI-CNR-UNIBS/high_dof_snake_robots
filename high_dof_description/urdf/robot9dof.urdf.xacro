@@ -14,7 +14,11 @@
 
 <xacro:antro3 prefix="a_" joint_limited="true" upper_arm_length="${0.5*arm_length/vertebrae}"  forearm_length="${0.5*arm_length/vertebrae}"/>
 
-D
+<joint name="b_fixed" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <parent link="a_flange" />
+  <child link="b_mount_flange" />
+</joint>
 <xacro:antro3 prefix="b_" joint_limited="true" upper_arm_length="${0.5*arm_length/vertebrae}"  forearm_length="${0.5*arm_length/vertebrae}"/>
 
 <joint name="c_fixed" type="fixed">
