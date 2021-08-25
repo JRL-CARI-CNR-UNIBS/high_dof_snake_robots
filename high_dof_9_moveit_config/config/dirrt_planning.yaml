@@ -7,6 +7,9 @@ group_names_map:
   mixed_strategy_extend_9902: manipulator
   mixed_strategy_99902: manipulator
   mixed_strategy_extend_99902: manipulator
+  mixed_strategy_extend_99902b: manipulator
+  mixed_strategy_extend_99902c: manipulator
+  mixed_strategy_extend_99902d: manipulator
   informed_rrt: manipulator
 
 default_planner_config: mixed_strategy
@@ -21,6 +24,7 @@ mixed_strategy:
   forgetting_factor: 0.999
   tube_radius: 0.01
   utopia_tolerance: 0.0000001
+  rewire_radius: 1.0
 
 mixed_strategy_extend:
   type: Multigoal
@@ -31,6 +35,7 @@ mixed_strategy_extend:
   forgetting_factor: 0.999
   tube_radius: 0.01
   utopia_tolerance: 0.0000001
+  rewire_radius: 1.0
 
 
 mixed_strategy_9901:
@@ -42,6 +47,7 @@ mixed_strategy_9901:
   forgetting_factor: 0.99
   tube_radius: 0.01
   utopia_tolerance: 0.0000001
+  rewire_radius: 1.0
 
 mixed_strategy_extend_9901:
   type: Multigoal
@@ -52,7 +58,7 @@ mixed_strategy_extend_9901:
   forgetting_factor: 0.99
   tube_radius: 0.01
   utopia_tolerance: 0.0000001
-
+  rewire_radius: 1.0
 
 mixed_strategy_99902:
   type: Multigoal
@@ -63,16 +69,51 @@ mixed_strategy_99902:
   forgetting_factor: 0.999
   tube_radius: 0.02
   utopia_tolerance: 0.0000001
+  rewire_radius: 1.0
 
 mixed_strategy_extend_99902:
   type: Multigoal
   max_distance: 0.5
   max_refine_time: 1500.0
   extend: true
-  local_bias: 0.25
+  local_bias: 0.5
   forgetting_factor: 0.999
   tube_radius: 0.02
   utopia_tolerance: 0.0000001
+  rewire_radius: 1.0
+
+mixed_strategy_extend_99902b:
+  type: Multigoal
+  max_distance: 0.25
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.5
+  forgetting_factor: 0.999
+  tube_radius: 0.02
+  utopia_tolerance: 0.0000001
+  rewire_radius: 1.0
+
+mixed_strategy_extend_99902c:
+  type: Multigoal
+  max_distance: 0.25
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.5
+  forgetting_factor: 0.999
+  tube_radius: 0.02
+  utopia_tolerance: 0.0000001
+  rewire_radius: 2.0
+
+mixed_strategy_extend_99902d:
+  type: Multigoal
+  max_distance: 0.25
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.5
+  forgetting_factor: 0.999
+  tube_radius: 0.02
+  utopia_tolerance: 0.0000001
+  rewire_radius: 0.5
 
 mixed_strategy_9902:
   type: Multigoal
@@ -83,6 +124,7 @@ mixed_strategy_9902:
   forgetting_factor: 0.99
   tube_radius: 0.02
   utopia_tolerance: 0.0000001
+  rewire_radius: 1.0
 
 mixed_strategy_extend_9902:
   type: Multigoal
@@ -93,6 +135,7 @@ mixed_strategy_extend_9902:
   forgetting_factor: 0.99
   tube_radius: 0.02
   utopia_tolerance: 0.0000001
+  rewire_radius: 1.0
 
 
 informed_rrt:
@@ -104,3 +147,4 @@ informed_rrt:
   forgetting_factor: 0
   tube_radius: 0.01
   utopia_tolerance: 0.0000001
+  rewire_radius: 1.0
