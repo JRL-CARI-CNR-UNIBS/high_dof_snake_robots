@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /MotionPlanning1
         - /Marker1
+        - /String1
       Splitter Ratio: 0.7425600290298462
     Tree Height: 257
   - Class: rviz/Help
@@ -188,9 +189,28 @@ Visualization Manager:
       Marker Topic: /marker_visualization_topic
       Name: Marker
       Namespaces:
-        pathplan: true
+        {}
       Queue Size: 100
       Value: true
+    - Align Bottom: false
+      Background Alpha: 0
+      Background Color: 0; 0; 0
+      Class: jsk_rviz_plugin/String
+      Enabled: true
+      Foreground Alpha: 1
+      Foreground Color: 25; 255; 240
+      Name: String
+      Overtake Color Properties: true
+      Overtake Position Properties: true
+      Topic: /benchmark/planner_id
+      Value: true
+      font: DejaVu Sans Mono
+      height: 128
+      left: 0
+      line width: 2
+      text size: 12
+      top: 0
+      width: 300
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -243,5 +263,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1920
-  X: 1920
+  X: 0
   Y: 27
