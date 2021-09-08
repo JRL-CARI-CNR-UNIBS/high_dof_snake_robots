@@ -2,6 +2,9 @@ group_names_map:
   mixed_strategy_a: manipulator
   mixed_strategy_b: manipulator
   informed_rrt: manipulator
+  timebased:                     manipulator
+  hamp_timebased:                manipulator
+  probabilistic_hamp_time_based: manipulator
 
 default_planner_config: mixed_strategy_a
 
@@ -27,7 +30,6 @@ mixed_strategy_b:
   tube_radius: 0.02
   utopia_tolerance: 0.0000001
 
-
 informed_rrt:
   type: Multigoal
   max_distance: 0.5
@@ -35,5 +37,59 @@ informed_rrt:
   extend: true
   local_bias: 0.0
   forgetting_factor: 0
-  tube_radius: 0.01
+  tube_radius: 0.02
   utopia_tolerance: 0.0000001
+
+timebased:
+  type: TimeBasedMultigoal
+  max_distance: 0.5
+  rewire_radius: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.25
+  tube_radius: 0.02
+  forgetting_factor: 0.999
+  norm2_weight: 0.0001
+  utopia_tolerance: 0.0000001
+
+hamp_timebased:
+  type: HAMPTimeBasedMultigoal
+  max_distance: 0.5
+  rewire_radius: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.25
+  tube_radius: 0.02
+  forgetting_factor: 0.999
+  utopia_tolerance: 0.0000001
+  base_frame: world
+  tool_frame: flange
+  poses_topic: /poses
+  computation_step: 0.1
+  links:
+  - a_upper_arm
+  - a_forearm
+  minimum_distance: 0.3
+  reaction_time: 0.2
+  norm2_weight: 0.0001
+
+probabilistic_hamp_time_based:
+  type: ProbabilisticHAMPTimeBasedMultiGoalPlanner
+  max_distance: 0.5
+  rewire_radius: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  forgetting_factor: 0.999
+  tube_radius: 0.02
+  utopia_tolerance: 0.0000001
+  local_bias: 0.25
+  base_frame: world
+  tool_frame: flange
+  occupancy_topic: /occupancy
+  computation_step: 0.1
+  links:
+  - a_upper_arm
+  - a_forearm
+  minimum_distance: 0.3
+  reaction_time: 0.2
+  norm2_weight: 0.0001
