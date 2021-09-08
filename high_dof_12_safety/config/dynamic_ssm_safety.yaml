@@ -1,0 +1,13 @@
+base_frame: "world"
+tool_frame: "flange"
+test_links:
+- a_upper_arm
+- a_forearm
+- b_upper_arm
+- b_forearm
+- c_upper_arm
+- c_forearm
+- d_upper_arm
+- d_forearm
+minimum_distance: 0.3
+reaction_time: 0.2
