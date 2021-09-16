@@ -5,5 +5,5 @@ test_links:
 - a_forearm
 - b_upper_arm
 - b_forearm
-minimum_distance: 0.3
+minimum_distance: 0.5
 reaction_time: 0.2

@@ -3,5 +3,5 @@ tool_frame: "flange"
 test_links:
 - a_upper_arm
 - a_forearm
-minimum_distance: 0.3
+minimum_distance: 0.8
 reaction_time: 0.2
