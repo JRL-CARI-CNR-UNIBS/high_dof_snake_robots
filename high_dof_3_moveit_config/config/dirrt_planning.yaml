@@ -71,7 +71,7 @@ hamp_timebased:
   links:
   - a_upper_arm
   - a_forearm
-  minimum_distance: 0.8
+  minimum_distance: 0.5
   reaction_time: 0.2
   norm2_weight: 0.0001
 
