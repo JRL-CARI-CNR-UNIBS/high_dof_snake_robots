@@ -1,0 +1,30 @@
+level0_hw:
+  remap_source_args:
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/cancel"
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/feedback"
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/goal"
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/result"
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/status"
+  - "/level0_hw/microinterpolator/unscaled_joint_target"
+  - "/level0_hw/js_pub/joint_states"
+  remap_target_args:
+  - "/manipulator/follow_joint_trajectory/cancel"
+  - "/manipulator/follow_joint_trajectory/feedback"
+  - "/manipulator/follow_joint_trajectory/goal"
+  - "/manipulator/follow_joint_trajectory/result"
+  - "/manipulator/follow_joint_trajectory/status"
+  - "/unscaled_joint_target"
+  - "/manipulator/joint_states"
+
+  js_pub:
+    type: cnr/control/JointStatePublisher
+    controlled_joint: all
+    base_link: world
+    tool_link: flange
+    robot_description_param: /robot_description
+    robot_description_planning_param: /robot_description_planning
+
+  microinterpolator:
+    type: "cnr/control/ScaledFJTPosController"
+    controlled_joints: all
+    continuity_order: 1

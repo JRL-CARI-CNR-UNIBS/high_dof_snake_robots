@@ -1,0 +1,8 @@
+control_configurations:
+- name: "watch"
+  components:
+  - {hardware_interface: "level0_hw", controller: "js_pub", description: ""}
+- name: "trajectory_tracking"
+  depends: ["watch"]
+  components:
+  - {hardware_interface: "level0_hw", controller: "microinterpolator", description: ""}

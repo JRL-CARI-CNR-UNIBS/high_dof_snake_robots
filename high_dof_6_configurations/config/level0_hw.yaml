@@ -1,0 +1,24 @@
+level0_hw:
+  type           : cnr/control/FakeRobotHW
+  appenders      : [file, screen]
+  levels         : [debug, info]
+  pattern_layout : "[%5p][%d{HH:mm:ss,SSS}][%50M:%04L][%24c] %m%n"
+  file_name      : level0_hw
+  sampling_period: 0.002
+  diagnostic_period: 0.1
+  maximum_missing_cycles: 100
+  feedback_joint_state_timeout: 10
+  joint_names:
+  - a_joint_1
+  - a_joint_2
+  - a_joint_3
+  - b_joint_1
+  - b_joint_2
+  - b_joint_3
+  base_link: world
+  tool_link: flange
+  robot_description_param: /robot_description
+  robot_description_planning_param: /robot_description_planning
+  kin_update_period: 0.002
+
+  initial_position: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
