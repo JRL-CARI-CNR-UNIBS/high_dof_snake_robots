@@ -5,8 +5,10 @@ scene_objects:
 - {type: "box_grigio", frame: "world", position: [ 1.35,0, 0], quaternion: [0, 0, 0, 1]}
 - {type: "box_grigio", frame: "world", position: [-1.35,0, 0], quaternion: [0, 0, 0, 1]}
 
-box_grigio:
-  color: [0.2,0.2,0.2, 1.]
-  box:  [1.0,1.0,2.0]
-  offset_quaternion: [ 0, 0, 0, 1 ]
-  offset: [0, 0, 1.0]
+object_geometries:
+
+  box_grigio:
+    color: [0.2,0.2,0.2, 1.]
+    box:  [1.0,1.0,2.0]
+    offset_quaternion: [ 0, 0, 0, 1 ]
+    offset: [0, 0, 1.0]

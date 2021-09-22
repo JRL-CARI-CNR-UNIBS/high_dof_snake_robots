@@ -1,0 +1,11 @@
+scene_objects:
+#- {type: "barra_testa", frame: "table", position: [0.80, 1.0, 0.9], quaternion: [0, 0, 0, 1]}
+- {type: "sphere", frame: "world", position: [0, 1.35,0], quaternion: [0, 0, 0, 1]}
+
+object_geometries:
+
+  sphere:
+    color: [0.2,0.2,0.2, 1.]
+    sphere:  0.01
+    offset_quaternion: [ 0, 0, 0, 1 ]
+    offset: [0, 0, 1.0]

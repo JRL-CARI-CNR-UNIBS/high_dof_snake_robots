@@ -4,6 +4,7 @@ group_names_map:
   mixed_strategy_c: manipulator
   informed_rrt: manipulator
   RRTstar: manipulator
+  warp_strategy: manipulator
 default_planner_config: mixed_strategy_a
 
 mixed_strategy_a:
@@ -27,6 +28,21 @@ mixed_strategy_b:
   forgetting_factor: 0.999
   tube_radius: 0.02
   utopia_tolerance: 0.0000001
+
+
+warp_strategy:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  rewire_radius: 2.0
+  extend: true
+  local_bias: 0.25
+  forgetting_factor: 0
+  tube_radius: 0.02
+  informed: false
+  warp: true
+  utopia_tolerance: 0.0000001
+
 
 RRTstar:
   type: Multigoal
