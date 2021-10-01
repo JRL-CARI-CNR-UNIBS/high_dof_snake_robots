@@ -75,7 +75,7 @@ hamp_timebased:
   - b_upper_arm
   - b_forearm
   minimum_distance: 0.5
-  reaction_time: 0.2
+  reaction_time: 1.0
   norm2_weight: 0.0001
 
 probabilistic_hamp_time_based:
