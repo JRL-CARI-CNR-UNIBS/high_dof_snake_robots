@@ -4,7 +4,6 @@ group_names_map:
   informed_rrt: manipulator
   timebased:                     manipulator
   hamp_timebased:                manipulator
-  hamp_timebased_1e6:                manipulator
   probabilistic_hamp_time_based: manipulator
 
 default_planner_config: mixed_strategy_a
@@ -50,33 +49,10 @@ timebased:
   local_bias: 0.25
   tube_radius: 0.02
   forgetting_factor: 0.999
-  norm2_weight: 0.0001
+  norm2_weight: 0.000001
   utopia_tolerance: 0.0000001
 
 hamp_timebased:
-  type: HAMPTimeBasedMultigoal
-  max_distance: 0.5
-  rewire_radius: 0.5
-  max_refine_time: 1500.0
-  extend: true
-  local_bias: 0.25
-  tube_radius: 0.02
-  forgetting_factor: 0.999
-  utopia_tolerance: 0.0000001
-  use_avoidance_goal: false # set true if the human avoidance is done only at the goal. Useful in Multigoal planning. ***CHANGE IT***
-  use_avoidance_path: true # set true if the human avoidance is done during the path. It is slower than use_avoidance_goal. ***CHANGE IT***
-  base_frame: world
-  tool_frame: flange
-  poses_topic: /poses
-  computation_step: 0.1
-  links:
-  - a_upper_arm
-  - a_forearm
-  minimum_distance: 0.2
-  reaction_time: 1.0
-  norm2_weight: 0.0001
-
-hamp_timebased_1e6:
   type: HAMPTimeBasedMultigoal
   max_distance: 0.5
   rewire_radius: 0.5
