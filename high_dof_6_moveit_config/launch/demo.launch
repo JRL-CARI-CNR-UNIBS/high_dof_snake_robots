@@ -4,7 +4,7 @@
   <arg name="pipeline" default="ompl" />
 
   <!-- By default, we do not start a database (it can be large) -->
-  <arg name="db" default="true" />
+  <arg name="db" default="false" />
   <!-- Allow user to specify database location -->
   <arg name="db_path" default="$(find high_dof_6_moveit_config)/default_warehouse_mongo_db" />
 
