@@ -4,13 +4,13 @@
   <rosparam file="$(find high_dof_gazebo)/config/control.yaml" command="load"/>
 
 <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-output="screen" ns="/manipulator" args="js_pub vel_controller"/>
+output="screen" ns="manipulator" args="joint_state_controller vel_controller"/>
 <!--<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
 output="screen" ns="/manipulator" args="js_pub "/>-->
-
+<!--
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
   respawn="false" output="screen">
-    <remap from="/joint_states" to="/manipulator/js_pub/joint_states" />
-  </node>
+    <remap from="/joint_states" to="/gazebo/joint_states" />
+  </node> -->
 
 </launch>

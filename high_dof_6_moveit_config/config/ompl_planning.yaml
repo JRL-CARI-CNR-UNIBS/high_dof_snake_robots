@@ -126,6 +126,11 @@ planner_configs:
     multi_query_planning_enabled: true
     store_planner_data: false
     load_planner_data: false
+  SemiPersistentLazyPRM: # reuses roadmap during lifetime of node but doesn't save/load roadmap to/from disk
+    type: geometric::LazyPRM
+    multi_query_planning_enabled: true
+    store_planner_data: false
+    load_planner_data: false
   PersistentLazyPRMstar: # use this with a representative environment to create a roadmap
     type: geometric::LazyPRMstar
     multi_query_planning_enabled: true
@@ -134,7 +139,7 @@ planner_configs:
     planner_data_path: /tmp/roadmap_high_dof_6.graph
 
 manipulator:
-  default_planner_config: PersistentLazyPRMstar
+  default_planner_config: SemiPersistentLazyPRM
   planner_configs:
     - SBL
     - EST

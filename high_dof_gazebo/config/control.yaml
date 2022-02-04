@@ -1,29 +1,14 @@
 manipulator:
   sample_period: 1.0e-3
-  js_pub:
-    type:         ros/control/JointStatePublisher
-  #joint_state_controller:
-    #type: joint_state_controller/JointStateController
-    #publish_rate: 50
-  
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 500
+
   vel_controller:
-    type: itia/control/InertiaMatrixVelocityToTorqueController
+    type: robot_control/RobustInverseDynamicsControl
     base_frame: world
     tool_frame: flange
     setpoint_topic_name: "/manipulator/joint_target"
-    use_target_torque: false
-    natural_frequency: 20
-    damping: 1
-    robustness_gain: 0.01
-
-
-  jnt_1_ol_controller:
-    type: itia/control/OpenLoopEffortController
-    controlled_joint:  a_joint_1
-    setpoint_topic_name: /jnt_sp
-    maximum_torque: 30000
-  jnt_2_ol_controller:
-    type: itia/control/OpenLoopEffortController
-    controlled_joint:  a_joint_2
-    setpoint_topic_name: /jnt_sp
-    maximum_torque: 30000
+    natural_frequency: 20   # natural frequency of the closed loop
+    damping: 1              # relative damping of the closed loop
+    robustness_gain: 0.01   # robustness gain
