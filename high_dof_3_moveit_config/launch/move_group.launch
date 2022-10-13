@@ -18,6 +18,8 @@
   <arg name="fake_execution_type" default="interpolate"/>
   <arg name="max_safe_path_cost" default="1"/>
   <arg name="publish_monitored_planning_scene" default="true"/>
+  <arg name="fake_execution" default="false"/>
+
 
   <arg name="capabilities" default=""/>
   <arg name="disable_capabilities" default=""/>
