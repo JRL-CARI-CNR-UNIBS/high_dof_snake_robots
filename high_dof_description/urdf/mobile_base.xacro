@@ -2,10 +2,10 @@
 <!--URDF MODEL only arms-->
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
   <xacro:macro name="mobile_base"
-  params="mobile parent child">
+  params="mobile parent child prefix:='' limit:='30.0'">
 
 <xacro:unless value="${mobile}">
-<joint name="base_joint" type="fixed">
+<joint name="${prefix}base_joint" type="fixed">
   <origin xyz="0 0 0.2" rpy="0 0 0" />
   <parent link="${parent}" />
   <child link="${child}" />
@@ -13,29 +13,69 @@
 </xacro:unless>
 
 <xacro:if value="${mobile}">
-<joint name="joint_traslx" type="prismatic">
+<joint name="${prefix}mobile_joint_traslx" type="prismatic">
   <origin xyz="0 0 0" rpy="0 0 0"/>
   <parent link="${parent}"/>
-  <child link="base_f1"/>
+  <child link="${prefix}base_f1"/>
   <dynamics damping="0.1" friction="0.1"/>
-  <limit effort="3000" velocity="2.0" lower="-2" upper="2" />
+  <limit effort="3000" velocity="1.0" lower="-${limit}" upper="${limit}" />
   <axis xyz="1 0 0" />
 </joint>
-<link name="base_f1" />
+<link name="${prefix}base_f1" />
 
-<joint name="joint_trasly" type="prismatic">
+<joint name="${prefix}mobile_joint_trasly" type="prismatic">
   <origin xyz="0 0 0" rpy="0 0 0"/>
-  <parent link="base_f1"/>
-  <child link="base_f2"/>
+  <parent link="${prefix}base_f1"/>
+  <child link="${prefix}base_f2"/>
   <dynamics damping="0.1" friction="0.1"/>
-  <limit effort="3000" velocity="2.0" lower="-2" upper="2" />
+  <limit effort="3000" velocity="1.0" lower="-${limit}" upper="${limit}" />
   <axis xyz="0 1 0" />
 </joint>
-<link name="base_f2" />
+<link name="${prefix}base_f2" />
 
-<joint name="a_fixed" type="fixed">
-  <origin xyz="0 0 0.2" rpy="0 0 0" />
-  <parent link="base_f2" />
+<joint name="${prefix}mobile_joint_rotz" type="revolute">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="${prefix}base_f2"/>
+  <child link="${prefix}base_f3"/>
+  <dynamics damping="0.1" friction="0.1"/>
+  <limit effort="3000" velocity="2.0" lower="-${pi}" upper="${pi}" />
+  <axis xyz="0 0 1" />
+</joint>
+<link name="${prefix}base_f3">
+  <inertial>
+    <mass value="30.0" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <inertia ixx="0.01" iyy="0.01" izz="0.5"
+    ixy="0" ixz="0" iyz="0" />
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0 0.3" rpy="0 0 0" />
+    <geometry>
+      <box size="1.2 1 0.6" />
+    </geometry>
+    <material name="Cyan">
+      <color rgba="0 1.0 1.0 1.0"/>
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0.3" rpy="0 0 0" />
+    <geometry>
+      <box size="1.2 1 0.6" />
+    </geometry>
+    <material name="Cyan">
+      <color rgba="0 1.0 1.0 1.0"/>
+    </material>
+  </collision>
+</link>
+
+
+
+
+<joint name="${prefix}mobile_a_fixed" type="fixed">
+  <origin xyz="0.1 0 0.6" rpy="0 0 0" />
+  <parent link="${prefix}base_f3" />
   <child link="${child}" />
 </joint>
 </xacro:if>

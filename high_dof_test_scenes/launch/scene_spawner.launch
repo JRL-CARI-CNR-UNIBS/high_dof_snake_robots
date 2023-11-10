@@ -1,12 +1,17 @@
 <?xml version="1.0"?>
 <launch>
+  <arg name="scene" default="static_scene"/>
 
   <arg name="name_space" default="/"/>
 
   <group ns="$(arg name_space)">
-    <rosparam command="load" file="$(find high_dof_test_scenes)/config/static_scene.yaml"/>
-    <node pkg="object_loader" name="scene_spawner" type="scene_spawner" output="screen"/>
+    <rosparam command="load" file="$(find high_dof_test_scenes)/config/$(arg scene).yaml"/>
+    <!-- <node pkg="object_loader" name="scene_spawner" type="scene_spawner" output="screen"/> -->
     <node pkg="object_loader" name="context_manager_node" type="context_manager_node" respawn="true" output="screen"/>
   </group>
+
+  <node pkg="object_loader" name="object_groups" type="object_groups_loader.py" output="screen">
+    <rosparam command="load" file="$(find high_dof_test_scenes)/config/$(arg scene).yaml"/>
+  </node>
 
 </launch>

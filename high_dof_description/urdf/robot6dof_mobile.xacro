@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--URDF MODEL 13 DoFs-->
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+<xacro:macro name="imm" params="base_frame prefix">
+
+<xacro:property name="arm_length" value="2" />
+<xacro:property name="vertebrae"  value="2" />
+
+<xacro:include filename="$(find high_dof_description)/urdf/antro3.xacro" />
+<xacro:include filename="$(find high_dof_description)/urdf/mobile_base.xacro" />
+
+
+<xacro:mobile_base mobile="true" parent="${base_frame}" child="${prefix}a_mount_flange" prefix="${prefix}"/>
+
+<xacro:antro3 prefix="${prefix}a_" joint_limited="true" upper_arm_length="${0.5*arm_length/vertebrae}"  forearm_length="${0.5*arm_length/vertebrae}"/>
+<joint name="${prefix}b_fixed" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <parent link="${prefix}a_flange" />
+  <child link="${prefix}b_mount_flange" />
+</joint>
+<xacro:antro3 prefix="${prefix}b_" joint_limited="true" upper_arm_length="${0.5*arm_length/vertebrae}"  forearm_length="${0.5*arm_length/vertebrae}"/>
+
+<joint name="${prefix}last_flange_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <parent link="${prefix}b_flange" />
+  <child link="${prefix}flange" />
+</joint>
+<link name="${prefix}flange"/>
+
+</xacro:macro>
+
+</robot>

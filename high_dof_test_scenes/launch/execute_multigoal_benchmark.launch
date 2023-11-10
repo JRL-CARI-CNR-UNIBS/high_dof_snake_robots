@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<node pkg="benchmark_pipelines"  type="execute_multigoal_benchmark.py" name="multigoal_benchmark" output="screen">
+   <rosparam command="load"  file="$(find high_dof_test_scenes)/config/multigoal_queries.yaml"/>
+</node>
+
+</launch>

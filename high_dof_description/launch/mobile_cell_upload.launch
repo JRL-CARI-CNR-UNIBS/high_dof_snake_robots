@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="imm_number" default="1"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find high_dof_description)/urdf/mobile_cell_$(arg imm_number)imm.urdf.xacro'" />
+</launch>

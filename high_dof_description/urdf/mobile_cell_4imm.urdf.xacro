@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--URDF MODEL 13 DoFs-->
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="cell" >
+
+  <xacro:include filename="$(find high_dof_description)/urdf/robot6dof_mobile.xacro" />
+
+
+  <link name="world">
+  </link>
+
+  <link name="home_imm2"/>
+  <joint name="home_imm2_joint" type="fixed">
+    <origin xyz="2.5 0 0" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="home_imm2" />
+  </joint>
+
+  <link name="home_imm3"/>
+  <joint name="home_imm3_joint" type="fixed">
+    <origin xyz="5.0 0 0" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="home_imm3" />
+  </joint>
+
+  <link name="home_imm4"/>
+  <joint name="home_imm4_joint" type="fixed">
+    <origin xyz="7.5 0 0" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="home_imm4" />
+  </joint>
+
+  <xacro:imm base_frame="world" prefix="imm1_"/>
+  <xacro:imm base_frame="home_imm2" prefix="imm2_"/>
+  <xacro:imm base_frame="home_imm3" prefix="imm3_"/>
+  <xacro:imm base_frame="home_imm4" prefix="imm4_"/>
+
+<xacro:include filename="$(find high_dof_description)/urdf/roscontrol.gazebo" />
+
+
+</robot>

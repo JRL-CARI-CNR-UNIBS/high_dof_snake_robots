@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="imm_number" default="1"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find high_dof_description)/urdf/mobile_cell_$(arg imm_number)imm.urdf.xacro'" />
+  <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen">
+    <param name="use_gui" value="true" />
+   </node>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="ignore_timestamp" value="true" />
+  </node>
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find high_dof_description)/launch/mobile_cell.rviz" output="screen"/>
+</launch>

@@ -1,0 +1,20 @@
+
+object_geometries:
+
+  muro:
+    color: [0.2,0.2,0.2, 0.7]
+    box:  [8.0,1,3.0]
+    offset_quaternion: [ 0, 0, 0, 1 ]
+    offset: [4, 0, 1.5]
+  ceil:
+    color: [1, 0.2, 0.2, 0.7]
+    box:  [18.0, 1, 1]
+    offset_quaternion: [ 0, 0, 0, 1 ]
+    offset: [0, 0, 0.5]
+
+
+
+portal:
+- {type: "muro", frame: "world", position: [ 1.7, 5.0,0], quaternion: [0, 0, 0, 1]}
+- {type: "muro", frame: "world", position: [ 0.3, 5.0,0], quaternion: [0, 0, 1, 0]}
+- {type: "ceil", frame: "world", position: [ 1, 5.0,2.0], quaternion: [0, 0, 0, 1]}

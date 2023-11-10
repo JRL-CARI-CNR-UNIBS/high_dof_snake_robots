@@ -1,0 +1,59 @@
+group_names_map:
+  imm1_mixed_strategy_a: imm1
+  imm1_mixed_strategy_b: imm1
+  imm1_informed_rrt: imm1
+  imm1_warp_strategy: imm1
+
+
+default_planner_config: imm1_mixed_strategy_a
+
+imm1_mixed_strategy_a:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  rewire_radius: 2.0
+  extend: true
+  local_bias: 0.25
+  forgetting_factor: 0.999
+  tube_radius: 0.02
+  utopia_tolerance: 0.0000001
+  collision_distance: 0.001
+  
+
+imm1_mixed_strategy_b:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  rewire_radius: 0.5
+  extend: true
+  local_bias: 0.25
+  forgetting_factor: 0.999
+  tube_radius: 0.02
+  utopia_tolerance: 0.0000001
+  collision_distance: 0.001
+
+
+imm1_warp_strategy:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  rewire_radius: 2.0
+  extend: true
+  local_bias: 0.25
+  forgetting_factor: 0.000001
+  tube_radius: 0.02
+  informed: false
+  warp: true
+  utopia_tolerance: 0.0000001
+  collision_distance: 0.001
+
+imm1_informed_rrt:
+  type: Multigoal
+  max_distance: 0.5
+  max_refine_time: 1500.0
+  extend: true
+  local_bias: 0.0
+  forgetting_factor: 0
+  tube_radius: 0.01
+  utopia_tolerance: 0.0000001
+  collision_distance: 0.001

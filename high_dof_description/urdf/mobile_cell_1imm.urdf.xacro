@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--URDF MODEL 13 DoFs-->
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="cell" >
+
+  <xacro:include filename="$(find high_dof_description)/urdf/robot6dof_mobile.xacro" />
+
+
+  <link name="world">
+  </link>
+
+  <xacro:imm base_frame="world" prefix="imm1_"/>
+
+<xacro:include filename="$(find high_dof_description)/urdf/roscontrol.gazebo" />
+
+
+</robot>
