@@ -11,8 +11,8 @@ planner_ids:
   - imm1_warp_strategy
 
 
-planning_time:  600.0
-long_planning_time:  900.0 # first repetition planning time
+planning_time:  900.0
+long_planning_time:  1800.0 # first repetition planning time
 
 queries_number: 1
 query_prefix: portal
