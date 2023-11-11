@@ -1,4 +1,4 @@
-test_name: "portal"
+test_name: "wide_portal"
 
 group_name: imm1
 pipeline_ids:
@@ -16,13 +16,20 @@ long_planning_time:  1800.0 # first repetition planning time
 
 queries_number: 1
 query_prefix: portal
-scenarios: [portal]
+scenarios: [wide_portal]
 repetitions: 30
 starting_query: 0
 
 # scenarios
 portal:
   object_groups: ["portal"]
+  query_0:
+    goal_configurations:
+    - [0, 6.5, 1.57079632679,  0, 0, 0,  0, 0, 0]
+    start_configuration: [0, 3.5, 1.57079632679,  0, 0, 0,  0, 0, 0]
+
+wide_portal:
+  object_groups: ["wide_portal"]
   query_0:
     goal_configurations:
     - [0, 6.5, 1.57079632679,  0, 0, 0,  0, 0, 0]

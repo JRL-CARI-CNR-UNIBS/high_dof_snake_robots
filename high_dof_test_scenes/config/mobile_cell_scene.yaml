@@ -18,3 +18,9 @@ portal:
 - {type: "muro", frame: "world", position: [ 1.7, 5.0,0], quaternion: [0, 0, 0, 1]}
 - {type: "muro", frame: "world", position: [ 0.3, 5.0,0], quaternion: [0, 0, 1, 0]}
 - {type: "ceil", frame: "world", position: [ 1, 5.0,2.0], quaternion: [0, 0, 0, 1]}
+
+
+wide_portal:
+- {type: "muro", frame: "world", position: [ 1.8, 5.0,0], quaternion: [0, 0, 0, 1]}
+- {type: "muro", frame: "world", position: [ 0.2, 5.0,0], quaternion: [0, 0, 1, 0]}
+- {type: "ceil", frame: "world", position: [ 1, 5.0,2.5], quaternion: [0, 0, 0, 1]}
