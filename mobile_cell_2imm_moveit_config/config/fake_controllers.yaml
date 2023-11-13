@@ -1,0 +1,53 @@
+controller_list:
+  - name: fake_imms_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - imm2_mobile_joint_traslx
+      - imm2_mobile_joint_trasly
+      - imm2_mobile_joint_rotz
+      - imm2_a_joint_1
+      - imm2_a_joint_2
+      - imm2_a_joint_3
+      - imm2_b_joint_1
+      - imm2_b_joint_2
+      - imm2_b_joint_3
+      - imm1_mobile_joint_traslx
+      - imm1_mobile_joint_trasly
+      - imm1_mobile_joint_rotz
+      - imm1_a_joint_1
+      - imm1_a_joint_2
+      - imm1_a_joint_3
+      - imm1_b_joint_1
+      - imm1_b_joint_2
+      - imm1_b_joint_3
+  - name: fake_imm1_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - imm1_mobile_joint_traslx
+      - imm1_mobile_joint_trasly
+      - imm1_mobile_joint_rotz
+      - imm1_a_joint_1
+      - imm1_a_joint_2
+      - imm1_a_joint_3
+      - imm1_b_joint_1
+      - imm1_b_joint_2
+      - imm1_b_joint_3
+  - name: fake_imm2_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - imm2_mobile_joint_traslx
+      - imm2_mobile_joint_trasly
+      - imm2_mobile_joint_rotz
+      - imm2_a_joint_1
+      - imm2_a_joint_2
+      - imm2_a_joint_3
+      - imm2_b_joint_1
+      - imm2_b_joint_2
+      - imm2_b_joint_3
+initial:  # Define initial robot poses per group
+  - group: imms
+    pose: home
+  - group: imm1
+    pose: home_imm1
+  - group: imm2
+    pose: home_imm2

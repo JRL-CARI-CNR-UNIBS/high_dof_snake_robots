@@ -2,8 +2,9 @@
 
 <launch>
 
+<arg name="imm" default="2"/>
 <node pkg="benchmark_pipelines"  type="execute_multigoal_benchmark.py" name="multigoal_benchmark" output="screen">
-   <rosparam command="load"  file="$(find high_dof_test_scenes)/config/queries/mobile_cell_1mm_queries.yaml"/>
+   <rosparam command="load"  file="$(find high_dof_test_scenes)/config/queries/mobile_cell_$(arg imm)imm_queries.yaml"/>
 </node>
 
 </launch>
