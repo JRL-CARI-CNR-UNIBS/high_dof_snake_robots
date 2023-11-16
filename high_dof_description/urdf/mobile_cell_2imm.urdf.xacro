@@ -11,7 +11,7 @@
   </link>
 
   <joint name="home_imm2_joint" type="fixed">
-    <origin xyz="2.5 0 0" rpy="0 0 0" />
+    <origin xyz="5 0 0" rpy="0 0 0" />
     <parent link="world" />
     <child link="home_imm2" />
   </joint>

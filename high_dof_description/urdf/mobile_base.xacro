@@ -2,7 +2,7 @@
 <!--URDF MODEL only arms-->
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
   <xacro:macro name="mobile_base"
-  params="mobile parent child prefix:='' limit:='30.0'">
+  params="mobile parent child prefix:='' limit:='6.0'">
 
 <xacro:unless value="${mobile}">
 <joint name="${prefix}base_joint" type="fixed">

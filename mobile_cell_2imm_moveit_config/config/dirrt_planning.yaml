@@ -9,12 +9,14 @@ default_planner_config: imms_mixed_strategy_a
 
 imms_mixed_strategy_a:
   type: Multigoal
-  max_distance: 0.5
-  max_refine_time: 1500.0
+  max_distance: 1.0
+  max_refine_time: 15000.0
   rewire_radius: 2.0
   extend: true
   local_bias: 0.25
   forgetting_factor: 0.999
+  warp_once: true
+  warp: true
   tube_radius: 0.02
   utopia_tolerance: 0.0000001
   collision_distance: 0.001
@@ -22,8 +24,8 @@ imms_mixed_strategy_a:
 
 imms_mixed_strategy_b:
   type: Multigoal
-  max_distance: 0.5
-  max_refine_time: 1500.0
+  max_distance: 1.0
+  max_refine_time: 15000.0
   rewire_radius: 0.5
   extend: true
   local_bias: 0.25
@@ -31,12 +33,14 @@ imms_mixed_strategy_b:
   tube_radius: 0.02
   utopia_tolerance: 0.0000001
   collision_distance: 0.001
+  warp_once: true
+  warp: true
 
 
 imms_warp_strategy:
   type: Multigoal
-  max_distance: 0.5
-  max_refine_time: 1500.0
+  max_distance: 1.0
+  max_refine_time: 15000.0
   rewire_radius: 2.0
   extend: true
   local_bias: 0.25
@@ -49,8 +53,8 @@ imms_warp_strategy:
 
 imms_informed_rrt:
   type: Multigoal
-  max_distance: 0.5
-  max_refine_time: 1500.0
+  max_distance: 1.0
+  max_refine_time: 15000.0
   extend: true
   local_bias: 0.0
   forgetting_factor: 0
